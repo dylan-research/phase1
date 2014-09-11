@@ -18,7 +18,8 @@ public class AccountMgr {
 	public static int addAcct( Account acct ) {
 		/**
 		 * return 0: added without a problem
-		 * return 1: account already exists
+		 * return 1: account with same id already exists
+		 * return 2: account with same email address already exists
 		 * return -1: account has invalid id ("" or null)
 		 */
 		
@@ -69,4 +70,14 @@ public class AccountMgr {
 			return a;
 		}
 	}
+
+	
+	// public static int changeEmailAddr( String acctID, String emailAddr ) {
+	//		return 0;
+	// } 
+	
+	
+	// public static int changeLocation( String acctID, String locCode ) {
+	//		return 0;
+	// }
 }

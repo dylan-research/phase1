@@ -31,7 +31,20 @@ public class ItemMgr {
 		// return -1: if acctID of item is invalid ("" or null)
 		// return 1: if the item has already been added
 		
+		if ( item == null )
+			return -1;
+		if ( item.getAcctID() == null )
+			return -1;
+		if ( item.getAcctID().equals("") )
+			return -1;
+		if( _items.containsKey( item.getID() ) )
+			return 1;
+		
+		_items.put( item.getID(), item );
+		_itemsByAcct.put( item.getAcctID(), _items );
 		return 0;
+		
+		
 	}
 	
 	
@@ -40,13 +53,28 @@ public class ItemMgr {
 		// return -1: if itemID is invalid ("" or null)
 		// return 1: if the item cannot be found
 		
+		if ( itemID == null )
+			return -1;
+		if ( itemID.equals("") )
+			return -1;
+		if( !_items.containsKey(itemID) )
+			return 1;
+		
+		_items.remove(itemID);
 		return 0; // if the item was removed successfully
 	}
 	
 	
 	// itemID: id of item
 	public static Item getItem( String itemID ) {
-		return null;
+		if(! _items.containsKey(itemID) )
+			return null;
+		if ( itemID == null )
+			return null;
+		if ( itemID.equals("") )
+			return null;
+		
+		return _items.get(itemID);
 		
 		
 	}
