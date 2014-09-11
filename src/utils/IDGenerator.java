@@ -1,8 +1,13 @@
 package utils;
 
+import java.util.UUID;
+
+
 public class IDGenerator {
 
 	public static String generate() {
-		return "";
+		UUID uuid = UUID.randomUUID();
+		String randomUUIDString = uuid.toString();
+		return randomUUIDString;
 	}
 }

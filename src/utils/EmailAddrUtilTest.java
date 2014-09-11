@@ -87,4 +87,22 @@ public class EmailAddrUtilTest {
 		assertEquals( rCode, true );
 	}
 
+	@Test
+	public void testValid4() {
+		boolean rCode = EmailAddrUtil.isValidEmailAddr( "microsoft@google.org" );
+		assertEquals( rCode, true );
+	}
+
+	@Test
+	public void testValid5() {
+		boolean rCode = EmailAddrUtil.isValidEmailAddr( "someone@cau.edu.cn" );
+		assertEquals( rCode, true );
+	}
+
+	@Test
+	public void testValid6() {
+		boolean rCode = EmailAddrUtil.isValidEmailAddr( "1234567890@biz.info" );
+		assertEquals( rCode, true );
+	}
+
 }
