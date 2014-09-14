@@ -1,7 +1,7 @@
 # Current Status
 
 ## Claire
-* items.SearchEngine
+* items.SearchEngineTest
 * accounts.AccountMgr (completed)
 * utils.EmailSvc (pending)
 * items.ItemMgr (completed)
