@@ -1,7 +1,9 @@
 # Current Status
 
 ## Claire
-* utils.EmailSvc
+* items.SearchEngine
+* accounts.AccountMgr (completed)
+* utils.EmailSvc (pending)
 * items.ItemMgr (completed)
 
 
@@ -10,7 +12,6 @@
 
 
 ## Available Components
-* accounts.AccountMgr
 * locations.Location
 * utils.TextFileLoader
 

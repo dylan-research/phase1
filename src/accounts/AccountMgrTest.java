@@ -30,8 +30,8 @@ public class AccountMgrTest {
 		assertEquals( rCode, 0 );
 		
 		Account newAcct2 = new Account( "new2" );
-		newAcct1.setName( newAcct1.getName() );
-		newAcct1.setEmailAddr( newAcct1.getEmailAddr() );
+		newAcct2.setName( newAcct1.getName() );
+		newAcct2.setEmailAddr( newAcct1.getEmailAddr() );
 		
 		rCode = AccountMgr.addAcct( newAcct2 );
 		assertEquals( rCode, 2 );

@@ -1,7 +1,9 @@
 package accounts;
 
+import java.util.Iterator;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Map.Entry;
 
 
 public class AccountMgr {
@@ -24,14 +26,24 @@ public class AccountMgr {
 		 */
 		
 		
-		if(acct.getID()==""||acct.getID()==null)
+		if (acct.getID() == null)
 			return -1;
-		else if(_accts.containsKey(acct.getID()))
-				return 1; 
-		else{
-			_accts.put(acct.getID(), acct);
-			return 0;
+		if (acct.getID().equals(""))
+			return -1;
+		if (_accts.containsKey(acct.getID()))
+			return 1; 	
+		
+		Iterator ita =  _accts.entrySet().iterator();
+		while(ita.hasNext()){
+			Entry  obj = (Entry) ita.next();
+			if (((Account)obj.getValue()).getEmailAddr().equals(acct.getEmailAddr()))
+				return 2;
 		}
+         
+		
+		_accts.put(acct.getID(), acct);
+		return 0;
+		
 		
 	}
 	
@@ -43,15 +55,16 @@ public class AccountMgr {
 		 * return -1: invalid id ("" or null) 
 		 */
 		
-
-		if(id==""||id==null)
+		if (id == null)
 			return -1;
-		else if(!_accts.containsKey(id))
+		if (id.equals(""))
+			return -1;
+		if (!_accts.containsKey(id))
 			return 1;
-		else{
-			_accts.remove(id);
-			return 0;
-		}
+		
+		_accts.remove(id);
+		return 0;
+		
 	}
 	
 	public static Account getAcct( String id ) {
@@ -61,14 +74,15 @@ public class AccountMgr {
 		 * return null: account does not exists for id
 		 */
 		
-		if(id==""||id==null)
+		if (id == null)
 			return null;
-		else if(!_accts.containsKey(id))
+		if (id.equals(""))
 			return null;
-		else{
-			Account a=new Account(id);
-			return a;
-		}
+		if (!_accts.containsKey(id))
+			return null;
+		
+		return  (Account) _accts.get(id);
+	
 	}
 
 	
