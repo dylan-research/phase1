@@ -14,6 +14,6 @@
 ## Available Components
 * locations.Location
 * utils.TextFileLoader
-
+* relationships.PeopleNetworkMgr
 
 
